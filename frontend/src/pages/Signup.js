@@ -56,7 +56,7 @@ const Signup = () => {
 
   const submitSignup = async () => {
     try {
-      await API.post('/auth/signup', form);
+      await API.post('/api/auth/signup', form);  // ✅ Updated path
       setOtpSent(true);
       setError('');
     } catch (err) {
@@ -66,7 +66,7 @@ const Signup = () => {
 
   const verifyOtp = async () => {
     try {
-      await API.post('/auth/verify-otp', { email: form.email, otp });
+      await API.post('/api/auth/verify-otp', { email: form.email, otp });  // ✅ Updated path
       alert('Signup successful. Please login.');
       navigate('/login');
     } catch (err) {
